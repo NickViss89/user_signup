@@ -41,7 +41,7 @@ def user_signup():
     if username_error == "" and password_error == "" and verify_error == "" and email_error == "":
         return redirect('/welcome?username='+username)
     else:
-        return render_template('main.html', username_error=username_error, username=username) #password_error=password_error, verify_error=verify_error, email_error=email_error, email=email)
+        return render_template('main.html', username_error=username_error, username=username, password_error=password_error, verify_error=verify_error, email_error=email_error, email=email)
 
 @app.route("/welcome")
 def valid_signup():
