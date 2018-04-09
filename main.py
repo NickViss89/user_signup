@@ -24,17 +24,17 @@ def user_signup():
     email_error = ""
 
     if len(username) == 0 or len(username) < 3 or len(username) > 20 or ' ' in username:
-        username_error = "Must be between 3-20 characters"
+        username_error = "Not a valid username"
     
     if len(password) == 0 or len(password) < 3 or len(password) > 20 or ' ' in password:
-        password_error = "Must be between 3-20 characters"
+        password_error = "Not a valid password"
     
     if verify != password:
-        verify_error = "Passwords must match"
+        verify_error = "Passwords don't match"
 
     if len(email) > 0:
         if len(email) < 3 or len(email) > 20 or ' ' in email:
-            email_error = "Must be between 3-20 characters"
+            email_error = "Not valid, must be between 3-20 characters"
         elif email.count('@') != 1 or email.count('.') != 1:
             email_error = "Must contain '@' and '.'"
 
